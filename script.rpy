@@ -1,40 +1,5 @@
 ﻿# The script of the game goes in this file.
 
-
-# should be a global init
-init:
-    $playerName = "Balan"
-
-define s = Character("Stick", image="stick")
-define y = Character("Yuzuki", image="yuz")
-define sh = Character("Shio", image="shio")
-define i = Character("Iroha", image="iroha")
-define t = Character("Tomoe", image="tomoe")
-define sa = Character("Satsuki", image="satsuki")
-
-image test_bg = "TEST_BG.PNG"
-
-image stick happy = "TEST_HappyChara.png"
-image stick sad = "TEST_SadChara.png"
-image stick angry = "TEST_AngryChara.png"
-
-image yuz happy = "Yuzuki/Happy_SketchY.PNG"
-
-image shio angry = "Shio/Angry_SketchSh.PNG"
-
-image iroha neutral = "Iroha/Neutral_SketchI.PNG"
-
-image tomoe neutral = "Tomoe/Neutral_SketchT.PNG"
-
-image satsuki neutral = "Satsuki/Neutral_SketchSa.PNG"
-
-image stick animated:
-    "TEST_HappyChara.png"
-    "TEST_SadChara.png"
-    "TEST_AngryChara.png"
-    repeat
-
-
 transform left_to_right:
     xalign 0.0
     linear 2.0 xalign 1.0
@@ -53,7 +18,7 @@ label show_everyone:
     # directory.
 
     # show stick happy at center with blinds
-    show yuz happy:
+    show yuzuki happy:
         xpos 0
 
     show tomoe neutral:
@@ -74,15 +39,6 @@ label show_everyone:
     sh "I am Shio."
 
     i "I am iroha."
-
-    # s sad "I am sad now."
-    # s happy "I am happy now."
-    # s angry "I am angry now."
-    # s sad "I am sad again."
-
-    s happy "player's name is [playerName]."
-
-    jump start_day_1
 
 
     # This ends the game.

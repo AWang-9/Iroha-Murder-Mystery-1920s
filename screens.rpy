@@ -70,10 +70,15 @@ style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
+style bgNotebook:
+    padding gui.frame_borders.padding
+    background Frame("gui/Notebook_1.png", gui.frame_borders, tile=gui.frame_tile)
+
 
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    # background Frame("gui/greyframe.png", gui.frame_borders, tile=gui.frame_tile)
 
 
 
@@ -130,6 +135,7 @@ style namebox is default
 style namebox_label is say_label
 
 
+
 style window:
     xalign 0.5
     xfill True
@@ -138,8 +144,8 @@ style window:
 
     # Default
     # background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Image("gui/TEST_TextBox.png", xalign=0.5, yalign=1.0)
-
+    # image spriteButton = im.Scale("TEST_CharaSprite.png", 200, 200)
+    background Image("gui/TExtBox_1_1.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -215,7 +221,7 @@ screen choice(items):
             textbutton i.caption:
                 action i.action
                 if "color" in i.kwargs:
-                    idle_background "gui/button/choice_" + i.kwargs["color"] + "_idle.png" 
+                    idle_background "gui/button/choice_" + i.kwargs["color"] + "_idle.png"
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -267,6 +273,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Notebook") action ShowMenu("charTOC")
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
